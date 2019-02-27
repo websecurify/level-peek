@@ -1,20 +1,20 @@
 {
-  "name": "level-peek",
+  "name": "ws-level-peek",
   "description": "",
   "version": "2.0.2",
-  "homepage": "https://github.com/dominictarr/level-peek",
+  "homepage": "https://github.com/websecurify/level-peek",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dominictarr/level-peek.git"
+    "url": "git://github.com/websecurify/level-peek.git"
   },
   "dependencies": {
-    "pull-level": "^2.0.3",
-    "pull-stream": "^3.4.5"
+    "pull-level": "^2.0.4",
+    "pull-stream": "^3.6.9"
   },
   "devDependencies": {
-    "level-sublevel": "~6.3.0",
-    "level-test": "~1.6.3",
-    "tape": "~2.14.0"
+    "level-sublevel": "^6.6.5",
+    "level-test": "^5.0.0",
+    "tape": "^4.10.1"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
