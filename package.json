@@ -12,7 +12,6 @@
     "pull-stream": "^3.6.9"
   },
   "devDependencies": {
-    "level-sublevel": "^6.6.5",
     "level-test": "^5.0.0",
     "tape": "^4.10.1"
   },

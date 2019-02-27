@@ -10,23 +10,9 @@ function first(cb) {
     return false
   }
 
-  if (cb) {
-    return pull.drain(func, function(err) {
-      cb(err === true ? null : err, data && data.key, data && data.value)
-    })
-  }
-  else {
-    return new Promise(function(resolve, reject) {
-      return pull.drain(func, function(err) {
-        if (err) {
-          reject(err)
-        }
-        else {
-          resolve([data && data.key, data && data.value])
-        }
-      })
-    })
-  }
+  return pull.drain(func, function(err) {
+    cb(err === true ? null : err, data && data.key, data && data.value)
+  })
 }
 
 exports.first = function(db, opts, cb) {

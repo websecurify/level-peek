@@ -1,9 +1,9 @@
-var test = require('tape')
-var peek = require('../')
+const test = require('tape')
+const peek = require('../')
 
-var levelup = require('level-test')()
+const levelup = require('level-test')()
 
-var db = levelup('test-level-peek2')
+const db = levelup('test-level-peek2')
 
 db.batch([
   { key: 'key!0000001', value: 'foo', type: 'put' },
@@ -15,16 +15,21 @@ db.batch([
 
   test('last', function(t) {
     peek.last(db, { gte: 'key ', lte: 'key~' }, function(err, key, value) {
+      t.ok(!err)
+
       t.equal(value, 'baz')
+
       t.end()
     })
   })
 
   test('first', function(t) {
     peek.first(db, { gte: 'key ', lte: 'key~' }, function(err, key, value) {
+      t.ok(!err)
+
       t.equal(value, 'foo')
+
       t.end()
     })
   })
-
 })
